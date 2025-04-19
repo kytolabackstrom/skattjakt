@@ -65,7 +65,10 @@
 
   <script>
     function showMessage() {
-      document.getElementById("message").classList.add("show");      
+      document.getElementById("message").classList.add("show");  
+      const sound = document.getElementById("treasureSound");
+      sound.currentTime = 0;
+      sound.play();    
     }
   </script>
 </body>
