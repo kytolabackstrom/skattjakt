@@ -36,24 +36,37 @@
     .map-button:hover {
       transform: scale(1.05);
     }
+    .play-audio-button {
+      margin-top: 1.5rem;
+      padding: 0.8rem 1.5rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 0.5rem;
+      background-color: #ffc107;
+      color: black;
+      cursor: pointer;
+    }
+    .play-audio-button:hover {
+      background-color: #e0a800;
+    }
   </style>
 </head>
-<body onload="playGreeting()">
+<body>
   <div class="intro">
     <h1>Hej kompis!</h1>
     <p>Vi är två piratflickor som behöver din hjälp att hitta vår skatt!</p>
     <p>Vi har en gåta som bara en riktig äventyrare kan lösa. Är du redo?</p>
+    <button class="play-audio-button" onclick="playGreeting()">Spela upp hälsning</button>
     <a href="skattkarta.html">
       <button class="map-button" aria-label="Starta skattjakten"></button>
     </a>
   </div>
-  <audio id="greetingAudio" src="hej.m4a" preload="auto"></audio>
+  <audio id="greetingAudio" src="hej.mp3" preload="auto"></audio>
   <script>
     function playGreeting() {
       const audio = document.getElementById('greetingAudio');
       audio.play().catch(error => {
-        // För vissa webbläsare krävs användarinteraktion först
-        console.warn("Ljuduppspelning blockerades tills användaren interagerar.", error);
+        console.warn("Ljuduppspelning blockerades.", error);
       });
     }
   </script>
