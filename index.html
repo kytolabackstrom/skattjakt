@@ -38,7 +38,7 @@
     }
   </style>
 </head>
-<body>
+<body onload="playGreeting()">
   <div class="intro">
     <h1>Hej kompis!</h1>
     <p>Vi är två piratflickor som behöver din hjälp att hitta vår skatt!</p>
@@ -47,5 +47,15 @@
       <button class="map-button" aria-label="Starta skattjakten"></button>
     </a>
   </div>
+  <audio id="greetingAudio" src="hej.m4a" preload="auto"></audio>
+  <script>
+    function playGreeting() {
+      const audio = document.getElementById('greetingAudio');
+      audio.play().catch(error => {
+        // För vissa webbläsare krävs användarinteraktion först
+        console.warn("Ljuduppspelning blockerades tills användaren interagerar.", error);
+      });
+    }
+  </script>
 </body>
 </html>
