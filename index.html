@@ -60,11 +60,12 @@
     <video class="bg-video" src="https://www.w3schools.com/html/mov_bbb.mp4" autoplay loop muted></video>
     <div class="hotspot" onclick="showMessage()"></div>
     <div id="message" class="message">🎉 Du hittade skatten!</div>
+    <audio id="treasureSound" src="treasure.mp3" preload="auto"></audio>
   </div>
 
   <script>
     function showMessage() {
-      document.getElementById("message").classList.add("show");
+      document.getElementById("message").classList.add("show");      
     }
   </script>
 </body>
